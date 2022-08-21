@@ -8,7 +8,6 @@ from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 from opentelemetry.sdk.trace import _Span
 from opentelemetry.semconv.trace import SpanAttributes
 from opentelemetry.trace import Span
-
 from opentelemetry.instrumentation.digma.fastapi import DigmaFastAPIInstrumentor
 
 
@@ -22,7 +21,6 @@ class TestDigmaMiddleware:
         app = FastAPI()
         self.app=app
 
-        tracer = trace.get_tracer(__name__)
         digma_opentelemetry_boostrap(service_name='server-ms', digma_backend="http://localhost:5050",
                                      configuration=DigmaConfiguration().trace_this_package())
         FastAPIInstrumentor.instrument_app(app)
