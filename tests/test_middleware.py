@@ -9,7 +9,7 @@ from opentelemetry.sdk.trace import _Span
 from opentelemetry.semconv.trace import SpanAttributes
 from opentelemetry.trace import Span
 
-from src.opentelemetry.instrumentation.digma.fastapi import DigmaFastAPIInstrumentor
+from opentelemetry.instrumentation.digma.fastapi import DigmaFastAPIInstrumentor
 
 
 class TestDigmaMiddleware:
